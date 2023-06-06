@@ -23,3 +23,18 @@ function numberOfOccurrencesInText(word, text) {
     });
     return wordCount;
   };
+
+  //This function doesn't work right now
+  function wordRemoving (text) {
+    const textArray = text.split(" ");
+    let resultArray = [];
+    textArray.forEach(function(element) {
+      if (element === "zoinks") {
+        textArray.splice(element);
+    } else {
+      resultArray.push(element);
+    }
+  });
+      const finalResult = resultArray.toString();
+      return finalResult;
+};

@@ -28,13 +28,18 @@ function numberOfOccurrencesInText(word, text) {
   function wordRemoving (text) {
     const textArray = text.split(" ");
     let resultArray = [];
-    textArray.forEach(function(element) {
+    for (let i =0; i < textArray.length;i++)
+      if (textArray[i].toLowerCase !== "zoinks" && textArray[i] !== "muppeteer" && textArray[i] !== "") {
+        resultArray.push(textArray[i]);
+      }   
+      let finalResult = resultArray.toString();
+      return finalResult;
+};
+
+/* textArray.forEach(function(element) {
       if (element === "zoinks") {
-        textArray.splice(element);
+        textArray.pop(element);
     } else {
       resultArray.push(element);
     }
-  });
-      const finalResult = resultArray.toString();
-      return finalResult;
-};
+  }); */

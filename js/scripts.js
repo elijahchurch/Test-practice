@@ -1,45 +1,39 @@
 // business logic
 
 function wordCounter(text) {
-    if (text.trim().length === 0) {
-        return 0;
+  if (text.trim().length === 0) {
+    return 0;
+  }
+  let wordCount = 0;
+  const textArray = text.split(" ");
+  textArray.forEach(function (element) {
+    if (!Number(element)) {
+      wordCount++;
     }
-    let wordCount = 0;
-    const textArray = text.split(" ");
-    textArray.forEach(function(element) {
-        if (!Number(element)) {
-            wordCount++; 
-        }        
-    });
-    return wordCount;
+  });
+  return wordCount;
 };
 function numberOfOccurrencesInText(word, text) {
-    const textArray = text.split(" ");
-    let wordCount = 0;
-    textArray.forEach(function(element) {
-      if (element.toLowerCase().includes(word.toLowerCase())) {
-        wordCount++
-      }
-    });
-    return wordCount;
-  };
-
-  //This function doesn't work right now
-  function wordRemoving (text) {
-    const textArray = text.split(" ");
-    let resultArray = [];
-    for (let i =0; i < textArray.length;i++)
-      if (textArray[i].toLowerCase !== "zoinks" && textArray[i] !== "muppeteer" && textArray[i] !== "") {
-        resultArray.push(textArray[i]);
-      }   
-      let finalResult = resultArray.toString();
-      return finalResult;
+  const textArray = text.split(" ");
+  let wordCount = 0;
+  textArray.forEach(function (element) {
+    if (element.toLowerCase().includes(word.toLowerCase())) {
+      wordCount++
+    }
+  });
+  return wordCount;
 };
 
-/* textArray.forEach(function(element) {
-      if (element === "zoinks") {
-        textArray.pop(element);
+
+function wordRemoving(text) {
+  const textArray = text.split(" ");
+  let resultArray = [];
+  textArray.forEach(function (word) {
+    if (word.toLowerCase().trim() === "zoinks") {
+      console.log(word);
     } else {
-      resultArray.push(element);
+      resultArray.push(word);
     }
-  }); */
+  })
+  return resultArray.join(" ");
+};
